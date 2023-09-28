@@ -11,6 +11,12 @@ To get the predictions simply run
 $ docker pull ghcr.io/wwu-mmll/mccqrnn_docker
 $ docker run -v /path/to/input:/input -v /path/to/otuput:/output ghcr.io/wwu-mmll/mccqrnn_docker
 ```
+To build a Singularity container (Windows 11 running WSL2)
+```
+docker pull ghcr.io/wwu-mmll/mccqrnn_docker:main-3a78f06
+docker tag ghcr.io/wwu-mmll/mccqrnn_docker:main-3a78f06 local/mccqrnn_docker:latest
+sudo singularity build mccqrnn.sif docker-daemon://local/mccqrnn_docker:latest
+```
 
 The input directory has to be filled with an `input.csv` file organized as in the [example.csv](example.csv).
 
